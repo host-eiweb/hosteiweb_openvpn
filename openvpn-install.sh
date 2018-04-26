@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Secure OpenVPN server installer for Debian, Ubuntu, CentOS and Arch Linux
-# https://github.com/Angristan/OpenVPN-install
+# https://github.com/host-eiweb/hosteiweb_openvpn
 
 
 if [[ "$EUID" -ne 0 ]]; then
@@ -97,7 +97,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
-		echo "OpenVPN-install (github.com/Angristan/OpenVPN-install)"
+		echo "OpenVPN-install (github.com/host-eiweb/hosteiweb_openvpn)"
 		echo ""
 		echo "Looks like OpenVPN is already installed"
 		echo ""
@@ -211,7 +211,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	done
 else
 	clear
-	echo "Welcome to the secure OpenVPN installer (github.com/Angristan/OpenVPN-install)"
+	echo "Welcome to the secure OpenVPN installer (github.com/host-eiweb/hosteiweb_openvpn)"
 	echo ""
 	# OpenVPN setup and first user creation
 	echo "I need to ask you a few questions before starting the setup"
