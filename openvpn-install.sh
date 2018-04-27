@@ -113,9 +113,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			echo "Tell me a name for the client cert"
 			echo "Please, use one word only, no special characters"
 			read -p "Client name: " -e -i newclient CLIENT
-			echo ""
-		        echo "Do you like secure "$CLIENT"  private key with password?"
-        		read -p "Use password for private key [y/n]:" -e -i y USEPASS
+            echo "Do you like secure ${CLIENT}'s  private key with password?"
+        	read -p "Use password for private key [y/n]:" -e -i y USEPASS
 			cd /etc/openvpn/easy-rsa/
 			./easyrsa build-client-full $CLIENT
 			# Generates the custom client.ovpn
@@ -332,6 +331,8 @@ else
 	while [[ $CLIENT = "" ]]; do
 		echo "Please, use one word only, no special characters"
 		read -p "Client name: " -e -i client CLIENT
+		echo "Do you like secure ${CLIENT}'s  private key with password?"
+        read -p "Use password for private key [y/n]:" -e -i y USEPASS
 	done
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now"
