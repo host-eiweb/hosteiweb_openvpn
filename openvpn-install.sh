@@ -334,6 +334,15 @@ else
 		echo "Do you like secure ${CLIENT}'s  private key with password?"
         read -p "Use password for private key [y/n]:" -e -i y USEPASS
 	done
+	# build-key for the client
+		export KEY_CN="$CLIENT"
+		export EASY_RSA="${EASY_RSA:-.}"
+		if [ $USEPASS = 'y' ]; 
+		then
+		"$EASY_RSA/pkitool" --pass $CLIENT
+		else
+		"$EASY_RSA/pkitool" $CLIENT 
+        fi
 	echo ""
 	echo "Okay, that was all I needed. We are ready to setup your OpenVPN server now"
 	read -n1 -r -p "Press any key to continue..."
